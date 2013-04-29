@@ -12,4 +12,8 @@ module SessionsHelper
 	def current_user
 		@current_user ||= User.find_by_id(cookies[:token])
 	end
+
+	def signed_in?
+		current_user.present?
+	end
 end
