@@ -12,4 +12,8 @@ class UsersController < ApplicationController
 			redirect_to @user, notice: "Successfully Created An Account" #need to build user show action & page
 		end
 	end
+
+	def show
+		@user = User.find(params[:id])
+	end
 end
