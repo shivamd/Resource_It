@@ -24,6 +24,27 @@ describe "User flow" do
 	  		expect { click_button submit }.to change(User, :count).by(1)
 	  	end
 	  end
+  end
 
-	end
+  describe "sign in" do
+  	before { visit signin_path }
+
+  	describe "with invalid information" do
+  		before { click_button "Sign in" }
+  		it { should have_selector('div.alert', text: "Invalid") }
+  	end
+
+  	describe "with valid information" do
+  		let(:user) { FactoryGirl.create(:user) }
+  		before do
+  			fill_in "Email", user.email
+  			fill_in "Password", user.password
+  			click_button "Sign in"
+  		end
+
+  		it { should have_selector('h1', text: user.name) }
+  		it { should have_link("Sign out", href: signout_path) }
+  		it { should_not have_link("Sign in", href: signin_path) }
+  	end
+  end
 end
