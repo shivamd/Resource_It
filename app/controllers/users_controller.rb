@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 		unless @user.save
 			render :new
 		else
+			sign_in(@user)
 			redirect_to @user, notice: "Successfully Created An Account"
 		end
 	end
