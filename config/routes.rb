@@ -1,6 +1,9 @@
 ResourceIt::Application.routes.draw do
   resources :users
-  match '/signup' => 'users#new'
+  resources :sessions, only: [:create]
+  match '/signin' => 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signup', to: 'users#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
