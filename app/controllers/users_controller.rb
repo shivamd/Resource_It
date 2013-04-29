@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 		unless @user.save
 			render :new
 		else
-			redirect_to @user, notice: "Successfully Created An Account" #need to build user show action & page
+			redirect_to @user, notice: "Successfully Created An Account"
 		end
 	end
 
