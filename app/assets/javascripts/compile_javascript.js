@@ -1,4 +1,4 @@
-alert(function() {
+function() {
 		var text;
     if (window.getSelection) {
         text = window.getSelection().toString();
@@ -9,5 +9,5 @@ alert(function() {
     	alert("Successfully created snippet")
     })
 
-}())
+}()
 
