@@ -5,5 +5,9 @@ alert(function() {
     } else if (document.selection && document.selection.type != 'Control') {
         text = document.selection.createRange().text;
     }
-    return text
+    $.get('/snippets?content='+text+'', function(data) {
+    	alert("Successfully created snippet")
+    })
+
 }())
+
