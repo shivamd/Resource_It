@@ -1,11 +1,13 @@
 class SnippetsController < ApplicationController
 
 	def create
+		user = User.find_by_remember_token(params[:token])
 		redirect_to root_url unless signed_in?
-		snippet = current_user.snippets.build(content: params[:content])
+		snippet = user.snippets.build(content: params[:content]) if user
 		if snippet.save
-			redirect_to current_user
+			redirect_to user
 		else
+			redirect_to root_url, notice: "Error in creating a snippet"
 		end
 	end
 end
