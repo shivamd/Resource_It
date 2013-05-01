@@ -7,7 +7,7 @@ class SnippetsController < ApplicationController
 		if snippet.save
 			redirect_to user
 		else
-			redirect_to root_url, notice: "Error in creating a snippet"
+			redirect_to root_url, notice: "Error creating a snippet"
 		end
 	end
 end
