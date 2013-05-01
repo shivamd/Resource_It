@@ -1,6 +1,3 @@
 <h1>Hello from Root url</h1>
-<a href="javascript: (function () {
-  var script = document.createElement('SCRIPT');
-  script.src = 'http://127.0.0.1:3000/assets/compile_javascript.js';
-  document.body.appendChild(script);
-})()">highlight text</a>
+<a href="javascript:<%= bookmarklet_caller_js %>">highlight text</a>
+
