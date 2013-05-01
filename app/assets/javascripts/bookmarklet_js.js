@@ -38,7 +38,6 @@ function loadXMLDoc(url) {
     }
     var tags = encodeURIComponent(prompt("Any categories for this snippet? e.g: funny inspirational code design", "snippet"));
     var token = getAllElementsWithAttribute('data-bookmarklet-token')[0].getAttribute('data-bookmarklet-token')
-    debugger
     loadXMLDoc('http://127.0.0.1:3000/snippets?content='+encodeURIComponent(text)+'&token='+encodeURIComponent(token)+'&tags='+tags)
 })()
 

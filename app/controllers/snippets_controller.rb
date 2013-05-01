@@ -5,6 +5,7 @@ class SnippetsController < ApplicationController
 		redirect_to root_url unless signed_in?
 		snippet = user.snippets.build(content: params[:content]) if user
 		if snippet.save
+			snippet.create_tags(params[:tags])
 			redirect_to user
 		else
 			redirect_to root_url, notice: "Error creating a snippet"

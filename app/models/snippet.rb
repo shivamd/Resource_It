@@ -4,4 +4,12 @@ class Snippet < ActiveRecord::Base
 	validates :content, :user_id, presence: true
   belongs_to :user
   has_and_belongs_to_many :tags
+
+
+  def create_tags(tags)
+  	tags = Tag.sanitize_tags(tags)
+  	tags.each do |tag|
+  		self.tags << Tag.find_or_create_by_content(tag)
+  	end
+  end
 end
