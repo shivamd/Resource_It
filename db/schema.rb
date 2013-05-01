@@ -11,12 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430195120) do
+ActiveRecord::Schema.define(:version => 20130501171354) do
 
   create_table "snippets", :force => true do |t|
     t.text    "content"
     t.integer "user_id"
   end
+
+  create_table "tags", :force => true do |t|
+    t.string "content"
+  end
+
+  add_index "tags", ["content"], :name => "index_tags_on_content"
 
   create_table "users", :force => true do |t|
     t.string "name"
