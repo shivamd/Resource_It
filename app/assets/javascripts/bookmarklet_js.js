@@ -27,6 +27,8 @@ function loadXMLDoc(url) {
 }
 
 
+
+
 (function() {
 	var text;
     if (window.getSelection) {
@@ -34,8 +36,10 @@ function loadXMLDoc(url) {
     } else if (document.selection && document.selection.type != 'Control') {
         text = document.selection.createRange().text;
     }
+    var tags = encodeURIComponent(prompt("Any categories for this snippet? e.g: funny inspirational code design", "snippet"));
     var token = getAllElementsWithAttribute('data-bookmarklet-token')[0].getAttribute('data-bookmarklet-token')
-    loadXMLDoc('http://127.0.0.1:3000/snippets?content='+encodeURIComponent(text)+'&token='+encodeURIComponent(token))
+    debugger
+    loadXMLDoc('http://127.0.0.1:3000/snippets?content='+encodeURIComponent(text)+'&token='+encodeURIComponent(token)+'&tags='+tags)
 })()
 
 
