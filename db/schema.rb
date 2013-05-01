@@ -11,11 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501171354) do
+ActiveRecord::Schema.define(:version => 20130501171653) do
 
   create_table "snippets", :force => true do |t|
     t.text    "content"
     t.integer "user_id"
+  end
+
+  create_table "snippets_tags", :force => true do |t|
+    t.integer "snippet_id"
+    t.integer "tag_id"
   end
 
   create_table "tags", :force => true do |t|
