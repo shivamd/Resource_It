@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 	validates :password, length: { minimum: 6 }, presence: true
 
 	has_many :snippets, dependent: :destroy
+	has_many :tags , through: :snippets
 
 	private
 
