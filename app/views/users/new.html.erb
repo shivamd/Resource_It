@@ -1,19 +1,6 @@
 
 <% unless current_user %>
-<h1>Sign up</h1>
-	<div class="sign-up">
-		<%= form_for @user, remote: true do |f| %>
-		 <%= render 'shared/error_messages', object: f.object %>
-
-		  <%= f.label :email %>
-		  <%= f.text_field :email %>
-
-		  <%= f.label :password %>
-		  <%= f.text_field :password %>
-
-		  <%= f.submit "Create my account" %>
-		<% end %>
-	</div>
+	<%= render 'users/signup' %>
 <% else %>
   <a href="javascript:<%= bookmarklet_caller_js %>">highlight text</a>
 <% end %>
