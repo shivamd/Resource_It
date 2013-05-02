@@ -1,7 +1,7 @@
 <h1>Sign up</h1>
 
 <div class="sign-up">
-	<%= form_for @user do |f| %>
+	<%= form_for @user, remote: true do |f| %>
 	 <%= render 'shared/error_messages', object: f.object %>
 
 	  <%= f.label :name %>

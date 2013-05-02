@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  respond_to :js, :html
 	def new
 		@user = User.new
 	end
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 			render :new
 		else
 			sign_in(@user)
-			redirect_to @user, notice: "Successfully Created An Account"
 		end
 	end
 
