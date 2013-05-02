@@ -2,7 +2,7 @@
 	<%= form_for @user, remote: true do |f| %>
 	  <%= render 'shared/error_messages', object: f.object %>
     <%= render 'shared/user_fields', f: f %>
-	  <%= f.submit "Create my account" %>
+	  <%= f.submit "Sign Up" %>
 		<% end %>
-		<small><a href="#">login</a></small>
+		<small><a href="#">Log In</a></small>
 </div>

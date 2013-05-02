@@ -8,3 +8,34 @@ body {
 button.bookmarklet {
 	cursor: pointer;
 }
+
+
+/**front page **/
+
+.container {
+	margin: 0 auto;
+  text-align: center;
+  margin-top: 15%;
+}
+
+form input {
+  padding: 5px;
+  &:focus {
+  	border: 1px solid #e3e3e3;
+  	outline: none;
+  }
+}
+
+input[type=submit]{
+  border: 2px solid #f6f6f6;
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+  color: white;
+  background-color: #d2d2d2;
+  cursor: pointer;
+  &:hover{
+    background-color: #e3e3e3;
+  }
+}
+

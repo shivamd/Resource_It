@@ -2,7 +2,7 @@
 <div class="sign-in">
 	<%= form_for(:session, url: sessions_path) do |f| %>
 	  <%= render 'shared/user_fields', f: f %>
-	  <%= f.submit "Sign in" %>
+	  <%= f.submit "Log In", class: "button" %>
 	<% end %>
-	<small><a href="#">signup</a></small>
+	<small><a href="#">Sign Up</a></small>
 </div>
