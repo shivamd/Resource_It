@@ -1,10 +1,7 @@
 
 <div class="sign-in">
 	<%= form_for(:session, url: sessions_path) do |f| %>
-
-	  <%= f.text_field :email, placeholder: "Email" %>
-	  <%= f.password_field :password, placeholder: "Password" %>
-
+	  <%= render 'shared/user_fields', f: f %>
 	  <%= f.submit "Sign in" %>
 	<% end %>
 	<small><a href="#">signup</a></small>

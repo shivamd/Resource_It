@@ -1,10 +1,7 @@
 <div class="sign-up">
 	<%= form_for @user, remote: true do |f| %>
 	  <%= render 'shared/error_messages', object: f.object %>
-
-	  <%= f.text_field :email, placeholder: "Email" %>
-	  <%= f.text_field :password, placeholder: "Password" %>
-
+    <%= render 'shared/user_fields', f: f %>
 	  <%= f.submit "Create my account" %>
 		<% end %>
 		<small><a href="#">login</a></small>
