@@ -1,4 +1,6 @@
-
+<%= content_for :page_specific_javascript do  %>
+  <%= javascript_include_tag "frontpage" %>
+<% end %>
 <% unless current_user %>
 	<%= render 'users/signup' %>
 	<%= render 'sessions/signin' %>
