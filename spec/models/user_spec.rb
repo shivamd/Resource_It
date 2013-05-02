@@ -14,4 +14,5 @@ describe User do
 	it { should ensure_length_of(:password).is_at_least(6) }
 
   it { should have_many(:snippets).dependent(:destroy) }
+  it { should have_many(:tags).through(:snippets) }
 end
