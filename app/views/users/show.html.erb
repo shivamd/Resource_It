@@ -1,1 +1,9 @@
 <h1><%= @user.name %>'s profile</h1>
+
+<h2>Tagged Snippets</h2>
+
+<% @user.tags.uniq.each do |tag| %>
+  <ul>
+  	<li><%= link_to tag.content, "/snippets/#{tag.content}" %></li>
+  </ul>
+<% end %>
