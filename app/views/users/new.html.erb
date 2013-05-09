@@ -7,8 +7,8 @@
 	<% unless current_user %>
 		<%= render 'users/signup' %>
 		<%= render 'sessions/signin' %>
-		<button class="bookmarklet">Highlight Text</button>
+		<button class="bookmarklet">Snippet-It</button>
 	<% else %>
-	  <a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">highlight text</a>
+	  <button><a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">Snippet-It</a></button>
 	<% end %>
 </div>

@@ -7,6 +7,16 @@ body {
 }
 button.bookmarklet {
 	cursor: pointer;
+  background-color: #3333ff;
+  padding: 10px;
+  border-radius: 4px;
+  color: #e3e3e3;
+  border: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  &:hover {
+    background-color: #4444ff;
+  }
 }
 
 
@@ -34,6 +44,8 @@ input[type=submit]{
   color: white;
   background-color: #d2d2d2;
   cursor: pointer;
+  color: #555;
+  font-weight: bold;
   &:hover{
     background-color: #e3e3e3;
   }
