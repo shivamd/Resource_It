@@ -4,6 +4,6 @@
 
 <% @user.tags.uniq.each do |tag| %>
   <ul>
-  	<li><%= link_to tag.content, "/snippets/#{tag.content}" %></li>
+  	<li><%= link_to tag.content, tag %></li>
   </ul>
 <% end %>
