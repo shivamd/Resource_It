@@ -1,7 +1,7 @@
 module BookmarkletHelper
 
 	def bookmarklet_caller_js
-	  base_url = Rails.env.dev? ? "http://#{request.host_and_port}/" : "https://#{request.host_and_port}/"
+	  base_url = Rails.env.development? ? "http://#{request.host_with_port}/" : "https://#{request.host_with_port}/"
 		js = <<-JS
 		(function (){
 			var script = document.createElement('SCRIPT');
