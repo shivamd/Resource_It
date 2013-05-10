@@ -143,6 +143,7 @@ DEPENDENCIES
   bcrypt-ruby
   capybara
   coffee-rails (~> 3.2.1)
+  coffee-script-source
   debugger
   factory_girl_rails
   jquery-rails
