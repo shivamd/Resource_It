@@ -38,7 +38,7 @@ function loadXMLDoc(url) {
     }
     var tags = encodeURIComponent(prompt("Any categories for this snippet? e.g: funny inspirational code design", "snippet"));
     var token = getAllElementsWithAttribute('data-bookmarklet-token')[0].getAttribute('data-bookmarklet-token')
-    loadXMLDoc('http://'+location.host+'/snippets?content='+encodeURIComponent(text)+'&token='+encodeURIComponent(token)+'&tags='+tags)
+    loadXMLDoc('http://snipp-et.herokuapp.com/snippets?content='+encodeURIComponent(text)+'&token='+encodeURIComponent(token)+'&tags='+tags)
 })()
 
 
