@@ -8,10 +8,6 @@ class SnippetsController < ApplicationController
 
     if snippet.save
       snippet.create_tags(params[:tags])
-      redirect_to user
-    else
-      redirect_to root_url, notice: "Error creating a snippet"
     end
-
   end
 end
