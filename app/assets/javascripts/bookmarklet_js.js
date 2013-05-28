@@ -38,7 +38,17 @@ function loadXMLDoc(url) {
     }
     var tags = encodeURIComponent(prompt("Any categories for this snippet? e.g: funny inspirational code design", "snippet"));
     var token = getAllElementsWithAttribute('data-bookmarklet-token')[0].getAttribute('data-bookmarklet-token')
-    loadXMLDoc('http://snipp-et.herokuapp.com/snippets?content='+encodeURIComponent(text)+'&token='+encodeURIComponent(token)+'&tags='+tags)
+    var url = ('http://snipp-et.herokuapp.com/snippets?content='+encodeURIComponent(text)+'&token='+encodeURIComponent(token)+'&tags='+tags)
+	console.log(url.length);
+    if (text === "" ){
+      alert("Selection can't be empty");
+    } else if ( url.length > 2000){
+      alert("Error: Max 2000 characters");
+    } 
+    else {
+      loadXMLDoc(url)
+      alert("successfully created snippet");
+    }      
 })()
 
 
