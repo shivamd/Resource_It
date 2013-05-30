@@ -1,14 +1,30 @@
 <%= content_for :page_specific_javascript do  %>
   <%= javascript_include_tag "frontpage" %>
 <% end %>
-
+	<p class="sub-header">An easy way to save your text snippets.</p>
 <div class="container">
-	<p>An easy way to save your text snippets.</p>
+  <div class="top">
 	<% unless current_user %>
 		<%= render 'users/signup' %>
 		<%= render 'sessions/signin' %>
-		<button class="bookmarklet">Snippet-It</button>
+		<a class="disabled">DRAG ME</a>
 	<% else %>
-	  <button><a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">Snippet-It</a></button>
+	  <a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">SNIPP-ET</a>
 	<% end %>
+  </div>
+
+  <div class="explanation">
+    <div class="info">
+      <h2>What?</h2>
+      <p>Snipp-et is a bookmarklet that allows you to save text snippets from all over the web.</p>
+    </div>
+    <div class="info"> 
+      <h2>How?</h2>
+      <p>Signup or Login. Drag the bookmarklet to your bookmark bar. Select any piece of text and click the bookmarklet.</p>
+    </div>
+    <div class="info">
+      <h2>Why?</h2>
+      <p>All the ideas, quotes, stories etc. you come across on the web in one place.Snipp-et provides a clean interface to navigate through them.</p>
+    </div>
+  </div>
 </div>

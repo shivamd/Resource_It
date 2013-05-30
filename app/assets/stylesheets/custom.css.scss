@@ -1,31 +1,58 @@
 body {
-	background: url("grey-pattern.png");
+  background: url("grey-pattern.png");
+  min-width: 100%;
+  min-height: 100%;
+  width: 960px;
+  font-family: 'Bitter', serif;
 }
 
 .sign-up {
-	display: none;
+  display: none;
 }
-button.bookmarklet {
-	cursor: pointer;
-  background-color: #3333ff;
-  padding: 10px;
-  border-radius: 4px;
-  color: #e3e3e3;
-  border: none;
-  font-weight: bold;
-  font-size: 1.2em;
-  &:hover {
-    background-color: #4444ff;
+nav {
+text-align: center;
+line-height: 50px;
+position: relative;
+h1.logo {
+  font-size: 3em;
+  text-transform: uppercase;
+  display: inline;
+
+}
+
+.signed-in {
+  position: absolute;
+  padding-right: 50px;
+  right: 0;
+  top: 0;
+  a {
+    text-decoration: none;
+    padding: 5px 20px;
   }
+
 }
-
-
+}
+p.sub-header {
+  text-align: center;
+  margin-top: 0;
+}
 /**front page **/
 
 .container {
-	margin: 0 auto;
-  text-align: center;
-  margin-top: 15%;
+  margin: 0 auto;
+  width: 800px;
+  margin-top: 100px;
+  .top {
+    text-align: center;
+  }
+  .explanation {
+    margin-left: 100px;
+    .info {
+      width: 200px;
+      float: left;
+      padding-right: 20px; 
+    }
+  }
 }
 
 form input {
@@ -36,7 +63,7 @@ form input {
   }
 }
 
-input[type=submit]{
+input[type=submit], div.signed-in a{
   border: 2px solid #f6f6f6;
   border-radius: 5px;
   width: 100px;
@@ -50,4 +77,43 @@ input[type=submit]{
     background-color: #e3e3e3;
   }
 }
+/* Bookmarklet */
 
+a.bookmarklet {
+       margin-top: 40px;
+       -moz-box-shadow:inset 0px 1px 0px 0px #4d94f0;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #4d94f0;
+        box-shadow:inset 0px 1px 0px 0px #4d94f0;
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4d94f0), color-stop(1, #1313f0) );
+        background:-moz-linear-gradient( center top, #4d94f0 5%, #1313f0 100% );
+        background-color:#4d94f0;
+        -moz-border-radius:6px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        border:1px solid #dcdcdc;
+        display:inline-block;
+        color:#ffffff;
+        font-size:40px;
+        padding:10px 63px;
+        text-decoration:none;
+        text-shadow:1px 1px 0px #ffffff;
+}
+.bookmarklet:hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1313f0), color-stop(1, #4d94f0) );
+        background:-moz-linear-gradient( center top, #1313f0 5%, #4d94f0 100% );
+        background-color:#1313f0;
+}
+.bookmarklet:active {
+        position:relative;
+        top:1px;
+}
+.disabled {
+  background-color: #bdc3c7;
+border-radius: 4px;
+padding: 12px 70px 13px;
+color: rgba( 255, 255,255,0.75);
+font-size: 17px;
+opacity: 0.7;
+line-height: 80px;
+cursor: default; 
+}

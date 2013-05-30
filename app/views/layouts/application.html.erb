@@ -6,14 +6,21 @@
   <%= javascript_include_tag "application" %>
   <%= yield :page_specific_javascript %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <% flash.each do |key, value| %>
+  <nav>
+    <h1 class="logo">Snipp-et</h1>
+    <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert") %>
   <% end %>
-  <% if signed_in? %>
-    <%= link_to "Sign out", signout_path, method: :delete %>
- 	<% end %>
+    <div class="signed-in">
+      <% if signed_in? %>
+        <%= link_to "LogOut", signout_path, method: :delete %> 
+        <%= link_to "Profile", user_path(current_user) %>
+   	  <% end %>
+    </div>
+  </nav>
 <%= yield %>
 
 </body>
