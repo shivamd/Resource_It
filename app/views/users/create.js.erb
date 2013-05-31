@@ -1,11 +1,12 @@
-<% if @user.save %>
+<% if current_user %>
 $('.sign-up').remove();
 $('.sign-in').remove();
 $('div.top a.disabled').remove();
 $('div.top').append('<a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">DRAG ME</a>');
 $('nav').append('<%= j render "layouts/signed_in" %>');
+$('div.alert').remove();
 $('nav').prepend('<div class="alert">Successfully signed up');
 <% end %>
-<% unless @user.save %>
+<% unless current_user %>
   $('nav').prepend('<div class="alert">Error in signing up');
 <% end %>
