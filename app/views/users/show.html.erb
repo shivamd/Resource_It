@@ -1,16 +1,19 @@
 <div class="profile">
 <h1>My Profile</h1>
-
-<h2>Tags</h2>
+<div class="tags">
+<h2>Popular Tags</h2>
 
 <% @user.tags.uniq.each do |tag| %>
   <ul>
   	<li class="tag"><%= link_to tag.content.capitalize, tag %></li>
   </ul>
 <% end %>
+</div>
 
+<div class="snippets">
 <h2>Latest Snippets</h2>
   <% @user.snippets.limit(5).each do |s| %>
-    <p> <%= truncate(s.content) %></p>
+    <a href="/snippets/<%= s.id %>" class="snippet">  <%= truncate(s.content, length: 200) %></a>
   <% end %>
+</div>
 </div>

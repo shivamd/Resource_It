@@ -144,4 +144,12 @@ cursor: default;
       }
     }
   }
+ a.snippet {
+   text-decoration: none;
+   display: block;
+   color: black; 
+   width: 25%;
+   border-bottom: 1px solid #e3e3e3;
+   margin-bottom: 20px;
+ } 
 }
