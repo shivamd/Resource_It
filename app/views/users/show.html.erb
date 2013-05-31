@@ -4,6 +4,6 @@
 
 <% @user.tags.uniq.each do |tag| %>
   <ul>
-  	<li><%= link_to tag.content.capitalize, tag %></li>
+  	<li class="tag"><%= link_to tag.content.capitalize, tag %></li>
   </ul>
 <% end %>
