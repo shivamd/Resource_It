@@ -1,10 +1,11 @@
 ResourceIt::Application.routes.draw do
-  resources :users
+  resources :users, except: [:show , :new]
   resources :sessions, only: [:create]
   resources :tags
   get "/snippets" => 'snippets#create'
   match '/signin' => 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+  match '/profile', to: 'users#show'
   match '/signup', to: 'users#new'
   root to: "users#new"
   # The priority is based upon order of creation:
