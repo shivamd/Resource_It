@@ -9,4 +9,6 @@ class Tag < ActiveRecord::Base
       tag.downcase
     end
   end
+
+  default_scope joins: :snippets, group: "tags.id", order: "snippets.count desc"
 end
