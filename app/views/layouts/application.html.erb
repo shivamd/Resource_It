@@ -14,12 +14,7 @@
     <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert") %>
   <% end %>
-    <div class="signed-in">
-      <% if signed_in? %>
-        <%= link_to "LogOut", signout_path, method: :delete %> 
-        <%= link_to "Profile", user_path(current_user) %>
-   	  <% end %>
-    </div>
+    <%= render 'layouts/signed_in' %>
   </nav>
 <%= yield %>
 

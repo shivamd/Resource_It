@@ -1,4 +1,9 @@
+<% if @user.save %>
+console.log("me");
 $('.sign-up').remove();
 $('.sign-in').remove();
 $('div.top a.disabled').remove();
-$('div.top').append('<a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">SNIPP-ET</a>')
+$('div.top').append('<a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">DRAG ME</a>');
+$('nav').append('<%= j render "layouts/signed_in" %>');
+$('nav').prepend('<div class="alert">Successfully signed up');
+<% end %>
