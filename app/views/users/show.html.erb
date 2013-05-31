@@ -1,4 +1,5 @@
-<h1><%= @user.name ? @user.name : @user.email %>'s profile</h1>
+<div class="profile">
+<h1>My Profile</h1>
 
 <h2>Tags</h2>
 
@@ -7,3 +8,9 @@
   	<li class="tag"><%= link_to tag.content.capitalize, tag %></li>
   </ul>
 <% end %>
+
+<h2>Latest Snippets</h2>
+  <% @user.snippets.limit(5).each do |s| %>
+    <p> <%= truncate(s.content) %></p>
+  <% end %>
+</div>

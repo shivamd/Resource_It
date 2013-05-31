@@ -115,3 +115,33 @@ cursor: default;
     transition: 0.25s;
   }
 }
+
+
+/* Profile page */
+
+.profile {
+
+  ul{
+    list-style-type: none;
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        background-color: #1ABC9C;
+        padding: 6px 10px;
+        border-radius: 4px;
+        -moz-transition: 0.25s;
+        -o-transition: 0.25s;
+        -webkit-transition: 0.25s;
+        transition: 0.25s;
+        &:hover {
+          background-color: #16a085;
+          -moz-transition: 0.25s;
+          -o-transition: 0.25s;
+          -webkit-transition: 0.25s;
+          transition: 0.25s;
+        }
+      }
+    }
+  }
+}
