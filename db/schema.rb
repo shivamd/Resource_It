@@ -14,26 +14,34 @@
 ActiveRecord::Schema.define(:version => 20130501171653) do
 
   create_table "snippets", :force => true do |t|
-    t.text    "content"
-    t.integer "user_id"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "snippets_tags", :force => true do |t|
-    t.integer "snippet_id"
-    t.integer "tag_id"
+    t.integer  "snippet_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tags", :force => true do |t|
-    t.string "content"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "tags", ["content"], :name => "index_tags_on_content"
 
   create_table "users", :force => true do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "remember_token"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "remember_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
