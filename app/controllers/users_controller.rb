@@ -12,6 +12,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:tags).find(params[:id])
+    @user = User.find(params[:id])
   end
 end

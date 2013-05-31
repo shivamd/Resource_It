@@ -2,10 +2,9 @@
 <h1>My Profile</h1>
 <div class="tags">
 <h2>Popular Tags</h2>
-
-<% @user.tags.uniq.each do |tag| %>
+<% @user.tags.limit(5).each do |tag| %>
   <ul>
-  	<li class="tag"><%= link_to tag.content.capitalize, tag %></li>
+    <li class="tag"><%= link_to tag.content.capitalize, tag %></li>
   </ul>
 <% end %>
 </div>
