@@ -2,7 +2,8 @@ ResourceIt::Application.routes.draw do
   resources :users, except: [:show , :new]
   resources :sessions, only: [:create]
   resources :tags
-  get "/snippets" => 'snippets#create'
+  get "/create_snippet" => 'snippets#create'
+  get "/snippets" => "snippets#index"
   match '/signin' => 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/profile', to: 'users#show'

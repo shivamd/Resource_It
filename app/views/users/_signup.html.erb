@@ -1,8 +1,8 @@
 <div class="sign-up">
-	<%= form_for @user, remote: true do |f| %>
-	  <%= render 'shared/error_messages', object: f.object %>
+  <%= form_for @user, remote: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
     <%= render 'shared/user_fields', f: f %>
-	  <%= f.submit "Sign Up" %>
-		<% end %>
-		<small class="toggle"><a href="#">Log In</a></small>
+    <%= f.submit "Sign Up" %>
+  <% end %>
+  <small class="toggle"><a href="#">Log In</a></small>
 </div>

@@ -5,7 +5,7 @@
 <a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">DRAG ME</a>
 <h1>My Profile</h1>
 <div class="tags">
-  <h2>Popular Tags<a href="#" class="index">View all</a></h2>
+  <h2>Popular Tags<%= link_to "View all", tags_path, class: "index" %></h2>
 <% @user.tags.limit(5).each do |tag| %>
   <ul>
     <li class="tag"><%= link_to tag.content.capitalize, tag %></li>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="snippets">
-  <h2>Latest Snippets<a href="#" class="index">View all</a></h2>
+  <h2>Latest Snippets<%= link_to "View all", "/snippets", class: "index" %></h2>
   <div class="snippet">
     <% @user.snippets.limit(5).each do |s| %>
       <small>Created <%= time_ago_in_words(s.created_at) %> ago. Tags: 
