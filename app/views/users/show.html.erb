@@ -5,7 +5,7 @@
 <a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">DRAG ME</a>
 <h1>My Profile</h1>
 <div class="tags">
-<h2>Popular Tags</h2>
+  <h2>Popular Tags<a href="#" class="index">View all</a></h2>
 <% @user.tags.limit(5).each do |tag| %>
   <ul>
     <li class="tag"><%= link_to tag.content.capitalize, tag %></li>
@@ -14,9 +14,17 @@
 </div>
 
 <div class="snippets">
-<h2>Latest Snippets</h2>
-  <% @user.snippets.limit(5).each do |s| %>
-    <a href="/snippets/<%= s.id %>" class="snippet">  <%= truncate(s.content, length: 200) %></a>
-  <% end %>
+  <h2>Latest Snippets<a href="#" class="index">View all</a></h2>
+  <div class="snippet">
+    <% @user.snippets.limit(5).each do |s| %>
+      <small>Created <%= time_ago_in_words(s.created_at) %> ago. Tags: 
+        <% s.tags.each do |tag| %>
+          <%= link_to tag.content.capitalize, tag_path(tag) %>
+        <% end %>
+      </small>
+      <a href="/snippets/<%= s.id %>" class="snippet">  <%= truncate(s.content, length: 200) %></a>
+    <% end %>
+  </div>
 </div>
 </div>
+
