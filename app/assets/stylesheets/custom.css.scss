@@ -120,7 +120,12 @@ cursor: default;
 /* Profile page */
 
 .profile {
-
+  
+  a.bookmarklet{
+    float:right;
+    margin-right: 48px;
+    padding: 12px 45px;
+  }
   ul{
     list-style-type: none;
     li {

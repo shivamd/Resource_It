@@ -1,4 +1,8 @@
+<%= content_for :page_specific_javascript do %>
+  <%= javascript_include_tag "frontpage" %>
+<% end %>
 <div class="profile">
+<a class="bookmarklet" href="javascript:<%= bookmarklet_caller_js %>">DRAG ME</a>
 <h1>My Profile</h1>
 <div class="tags">
 <h2>Popular Tags</h2>
