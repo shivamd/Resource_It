@@ -1,6 +1,6 @@
  <div class="signed-in">
    <% if signed_in? %>
      <%= link_to "LogOut", signout_path, method: :delete %> 
-    <%= link_to "Profile", user_path(current_user) %>
+    <%= link_to "Profile", '/profile' %>
    <% end %>
 </div>
