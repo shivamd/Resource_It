@@ -12,4 +12,7 @@ class Snippet < ActiveRecord::Base
       self.tags << Tag.find_or_create_by_content(tag)
     end
   end
+
+
+  default_scope order('created_at DESC')
 end
