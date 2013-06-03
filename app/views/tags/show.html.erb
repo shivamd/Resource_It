@@ -1,4 +1,13 @@
-<h1><%= @tag.content.capitalize %></h1>
-<% @snippets.each do |snip| %>
-<p><%= snip.content %></p>
-<% end %>
+<div class="container">
+  <h1 class="header"><%= @tag.content.capitalize %></h1>
+  <% @snippets.each do |snip| %>
+    <div class="snippet">
+      <small>Created <%= time_ago_in_words(snip.created_at) %> ago. Tags: 
+        <% snip.tags.each do |tag| %>
+          <%= link_to tag.content.capitalize, tag_path(tag) %>
+        <% end %>
+      </small>
+      <p><%= snip.content %></p>
+    </div>
+  <% end %>
+</div>
