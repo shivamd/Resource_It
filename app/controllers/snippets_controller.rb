@@ -10,4 +10,9 @@ class SnippetsController < ApplicationController
       snippet.create_tags(params[:tags])
     end
   end
+
+
+  def index
+    redirect_to root_path unless current_user
+  end
 end
