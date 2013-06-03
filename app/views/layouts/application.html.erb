@@ -13,7 +13,7 @@
     <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert") %>
   <% end %>
-    <h1 class="logo">Snipp-et</h1>
+  <h1 class="logo"><%= link_to "Snipp-et", root_path %></h1>
     <%= render 'layouts/signed_in' %>
   </nav>
 <%= yield %>
