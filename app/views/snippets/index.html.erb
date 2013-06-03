@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="header">All Snippets</h1>
+
+  <% current_user.snippets.each do |s| %>
+    <div class="snippet">
+      <%= render 'tags/info', snip: s %> 
+      <p><%= s.content %></p>
+    </div>
+  <% end %>
+</div>
