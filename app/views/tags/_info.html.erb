@@ -1,0 +1,5 @@
+<small>Created <%= time_ago_in_words(snip.created_at) %> ago. Tags: 
+  <% snip.tags.each do |tag| %>
+    <%= link_to tag.content.capitalize, tag_path(tag) %>
+  <% end %>
+</small>
