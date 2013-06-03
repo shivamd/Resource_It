@@ -139,34 +139,6 @@ cursor: default;
     margin-right: 48px;
     padding: 12px 45px;
   }
-  .tags {
-    a.index {
-      margin-left: 28px;
-    }
-  }
-  ul{
-    list-style-type: none;
-    li {
-      a {
-        color: white;
-        text-decoration: none;
-        background-color: #1ABC9C;
-        padding: 6px 10px;
-        border-radius: 4px;
-        -moz-transition: 0.25s;
-        -o-transition: 0.25s;
-        -webkit-transition: 0.25s;
-        transition: 0.25s;
-        &:hover {
-          background-color: #16a085;
-          -moz-transition: 0.25s;
-          -o-transition: 0.25s;
-          -webkit-transition: 0.25s;
-          transition: 0.25s;
-        }
-      }
-    }
-  }
  div.snippet {
    width: 25%;
    small {
@@ -189,4 +161,48 @@ cursor: default;
      border: none;
    }
  } 
+
 }
+  .tags {
+    a.index {
+      margin-left: 28px;
+    }
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .all-tags {
+    width: 35%;
+    ul {
+      text-align: center;
+      li {
+        float: left;
+        padding: 2px;
+      }
+    }
+  }
+  ul{
+    list-style-type: none;
+    li {
+      margin-bottom: 20px;
+      a {
+        color: white;
+        text-decoration: none;
+        background-color: #1ABC9C;
+        padding: 6px 10px;
+        border-radius: 4px;
+        -moz-transition: 0.25s;
+        -o-transition: 0.25s;
+        -webkit-transition: 0.25s;
+        transition: 0.25s;
+        &:hover {
+          background-color: #16a085;
+          -moz-transition: 0.25s;
+          -o-transition: 0.25s;
+          -webkit-transition: 0.25s;
+          transition: 0.25s;
+        }
+      }
+    }
+  }
